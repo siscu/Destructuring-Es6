@@ -350,11 +350,32 @@ function getPeople({ nameFilter, minAge }) {
 ### Importación de objetos
 
 ```javascript
+// Con ES5
+import React from "React";
+class MyComponent extends React.Component {}
 
+// Con ES6 (Destructuring)
+import React, { Component } from "React";
+class MyComponent extends Component {}
 ```
 
 ### Destructuring en React
+Destructuring es una técnica usada mucho en los componentes React ya que les da mucha más legibilidad. Las props suelen ser un blanco fácil para poder realizar el destructuring siempre que se use más de una.
 
 ```javascript
+// Con ES5
+const MasterPage = (props) => (
+  <main className={root}>
+    <SearchPanel search={props.search} />
+    <SearchResult results={props.results} isLoading={props.isLoading} />
+  </main>
+);
 
+// Con ES6 (Destructuring)
+const MasterPage = ({ search, results, isLoading }) => (
+  <main className={root}>
+    <SearchPanel search={search} />
+    <SearchResult results={results} isLoading={isLoading} />
+  </main>
+);
 ```
